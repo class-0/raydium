@@ -24,6 +24,7 @@ const swapClmm = async (tokenAddressA, tokenAddressB, amount) => {
     disableFeatureCheck: true,
   })
 
+
   const mintInfoA = await splToken.getMint(
     connection,
     new web3.PublicKey(tokenAddressA)
@@ -42,7 +43,7 @@ const swapClmm = async (tokenAddressA, tokenAddressB, amount) => {
   const poolData = poolDatas.data.find((item) => item.type === "Concentrated")
 
   if (!poolData) {
-    throw new Error("No clmm pool data found")
+    throw new Error("clmm pool data Not found")
   }
 
   const poolInfo = await PoolUtils.fetchComputeClmmInfo({
