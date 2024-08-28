@@ -24,7 +24,6 @@ const swapClmm = async (tokenAddressA, tokenAddressB, amount) => {
     disableFeatureCheck: true,
   })
 
-
   const mintInfoA = await splToken.getMint(
     connection,
     new web3.PublicKey(tokenAddressA)
